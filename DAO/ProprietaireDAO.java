@@ -52,4 +52,17 @@ public class ProprietaireDAO {
         }
         return null;
     }
+
+    public void  ajouter (proprietaire p ){
+        String sql = "INSERT INTO proprietaire(nom, prenom, adresse) VALUES(? , ? , ?)";
+        try( Connection cn = Connexion.ouvrir();
+        PreparedStatement ps = cn.prepareStatement(sql)) {
+         ps.setString(1,p.getNom());
+            ps.setString(1,p.getPrenom());
+            ps.setString(1,p.getAdresse());
+
+        } catch (SQLException ex){
+            System.out.println("Erreur :"+ex.getMessage());
+        }
+    }
 }
