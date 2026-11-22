@@ -19,5 +19,9 @@ public class Compte {
         public int getId_proprietaire(){
             return id_proprietaire;
         }
+
+    public void setSolde(double solde) {
+        this.solde = solde;
     }
+}
 
