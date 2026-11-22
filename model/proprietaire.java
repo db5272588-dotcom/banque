@@ -30,4 +30,8 @@ public class proprietaire {
     public String getAdresse(){
         return adresse;
     }
+   public String toString(){
+        if ()
+        return nom + " " + prenom + " " + adresse;
+   }
 }
