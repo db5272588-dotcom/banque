@@ -6,8 +6,15 @@ import model.proprietaire;
 
 void main(){
     ProprietaireDAO pDAO = new ProprietaireDAO();
-    ArrayList<proprietaire> proprietaires = pDAO.getProprietairs();
-    for (proprietaire p : proprietaires){
+
+    proprietaire p = pDAO.rechercheproprietairs(1);
+    if (p ! = null) {
         System.out.println(p);
+
     }
+
+    //ArrayList<proprietaire> proprietaires = pDAO.getProprietairs();
+    //    for (proprietaire p : proprietaires){
+    //        System.out.println(p);
+    //    }
 }

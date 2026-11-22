@@ -31,4 +31,25 @@ public class ProprietaireDAO {
         }
         return proprietairs;
     }
+
+    public proprietaire rechercheproprietairs( int id){
+        String sql= "select ,nom,prenom,adresse from Proprietair where id = ?";
+
+        try (Connection cn = Connexion .ouvrir();
+             PreparedStatement ps = cn.prepareStatement(sql);){
+            ps.setInt( 1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                String adresse = rs.getString("adresse");
+                proprietaire p = new proprietaire(id,nom,prenom,adresse);
+               return p;
+            }
+
+        }catch (SQLException ex){
+            System .out.println(" Erreur:"+ex.getMessage());
+        }
+        return null;
+    }
 }
