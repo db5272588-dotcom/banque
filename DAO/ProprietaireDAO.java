@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 public class ProprietaireDAO {
     public ArrayList<proprietaire> getProprietairs(){
         ArrayList<proprietaire> proprietairs=new ArrayList<>();
@@ -32,7 +33,7 @@ public class ProprietaireDAO {
         return proprietairs;
     }
 
-    public proprietaire rechercheproprietairs( int id){
+    public proprietaire rechercheproprietair( int id){
         String sql= "select ,nom,prenom,adresse from Proprietair where id = ?";
 
         try (Connection cn = Connexion .ouvrir();
@@ -50,19 +51,50 @@ public class ProprietaireDAO {
         }catch (SQLException ex){
             System .out.println(" Erreur:"+ex.getMessage());
         }
-        return null;
+        return proprietaire;
     }
 
-    public void  ajouter (proprietaire p ){
-        String sql = "INSERT INTO proprietaire(nom, prenom, adresse) VALUES(? , ? , ?)";
+    public void ajouter (proprietaire p ){
+        String sql = "INSERT INTO proprietaire (nom, prenom, adresse ) VALUES(? , ? , ?)";
         try( Connection cn = Connexion.ouvrir();
         PreparedStatement ps = cn.prepareStatement(sql)) {
          ps.setString(1,p.getNom());
-            ps.setString(1,p.getPrenom());
-            ps.setString(1,p.getAdresse());
+            ps.setString(2,p.getPrenom());
+            ps.setString(3,p.getAdresse());
+            ps.executeUpdate();
 
         } catch (SQLException ex){
             System.out.println("Erreur :"+ex.getMessage());
         }
+        return proprietaires;
+    }
+    public void  Modifier (proprietaire p ){
+        String sql = "UPDATE proprietaire SET nom=?, prenom=?, adresse=? WHERE id= ?";
+        try( Connection cn = Connexion.ouvrir();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setString(1,p.getNom());
+            ps.setString(2,p.getPrenom());
+            ps.setString(3,p.getAdresse());
+            ps.executeUpdate();
+
+        } catch (SQLException ex){
+            System.out.println("Erreur :"+ex.getMessage());
+        }
+        return Proprietaires;
+    }
+
+    public void supprimer (proprietaire p ){
+        String sql =" DELETE FROM proprietaire WHERE id=?";
+        try( Connection cn = Connexion.ouvrir();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setString(1,p.getNom());
+            ps.setString(2,p.getPrenom());
+            ps.setString(3,p.getAdresse());
+            ps.executeUpdate();
+
+        } catch (SQLException ex){
+            System.out.println("Erreur :"+ex.getMessage());
+        }
+        return Propertaires;
     }
 }
