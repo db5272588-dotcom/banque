@@ -12,7 +12,7 @@ public class proprietaire {
         this.prenom=prenom;
         this.adresse=adresse;
     }
-    public proprietaire(String nom, String prenom, String adresse){
+    public void proprietaire(String nom, String prenom, String adresse){
 
         this.nom= nom;
         this.prenom=prenom;
@@ -30,8 +30,8 @@ public class proprietaire {
     public String getAdresse(){
         return adresse;
     }
-    public String setAdresse( String adresse){
-        return adresse;
+    public void setAdresse( String adresse){
+        this.adresse=adresse;
     }
    public String toString(){
         return nom + " " + prenom + " " + adresse;

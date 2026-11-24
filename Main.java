@@ -1,30 +1,34 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
-import DAO.ProprietaireDAO;
+
+import DAO.proprietaireDAO;
 import model.proprietaire;
 
 void main(){
-    ProprietaireDAO pDAO = new ProprietaireDAO();
 
-    proprietaire p = pDAO.rechercheproprietair(2);
-    if (p !=null)pDAO.supprimer(p);
+   proprietaireDAO pDAO = new proprietaireDAO();
 
-    //proprietaire p = pDAO.rechercheproprietair(1);
-    //    p.setAdresse("Dakar");
-    //    pDAO.Modifier(p);
+    proprietaire p = pDAO.rechercheproprietair(10);
+    if (p !=null){
+        pDAO.supprimer(p);
+    }
 
 
-    //proprietaire p = new proprietaire("Ba","Diary","Mboro");
-    //    pDAO.ajouter(p);
+   // p.setAdresse("Dakar");
+    //    pDAO.modifier(p);
 
-   // proprietaire p = pDAO.rechercheproprietairs(1);
-    //    if (p != null) {
-    //        System.out.println(p);
+
+    //proprietaire p = new proprietaire(1 ,"Faye", "khady", "Touba");
+    //pDAO.ajouter(p);
+   // proprietaire p = pDAO.rechercheproprietair(8);
     //
+    //        if (p !=null){
+    //        System.out.println(p);
     //    }
-    //ArrayList<proprietaire> proprietaires = pDAO.getProprietairs();
-    //    for (proprietaire p : proprietaires){
+
+    //    ArrayList<proprietaire> properties = pDAO.getProprietairs();
+    //    for (proprietaire p : properties){
     //        System.out.println(p);
     //    }
 }
