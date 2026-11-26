@@ -10,26 +10,26 @@ import model.proprietaire;
 void main(){
 
 
-   //proprietaireDAO pDAO = new proprietaireDAO();
+   proprietaireDAO pDAO = new proprietaireDAO();
 
-   // proprietaire p = pDAO.rechercheproprietair(2);
-    //if (p !=null){
-      //  pDAO.supprimer(p);
-  //  }
+    proprietaire p = pDAO.rechercheproprietair(2);
+    if (p !=null){
+        pDAO.supprimer(p);
+    }
 
 
     //p.setAdresse("Dakar");
        // pDAO.modifier(p);
 
 
-      //proprietaire p = new proprietaire(1 ,"Faye", "khady", "Touba");
-   // pDAO.ajouter(p);
+//      proprietaire p = new proprietaire(1 ,"BA", "Ndeye", "thiese");
+//      pDAO.ajouter(p);
 
-   //proprietaire p = pDAO.rechercheproprietair(8);
+  // proprietaire p = pDAO.rechercheproprietair(8);
 
-           //if (p !=null){
-         //  System.out.println(p);
-       // }
+//           if (p !=null){
+//           System.out.println(p);
+//        }
 
        // ArrayList<proprietaire> properties = pDAO.getProprietairs();
        // for (proprietaire p : properties){
@@ -38,15 +38,14 @@ void main(){
 
     // pour le compte
 
-    CompteDAO cDAO = new CompteDAO();
+   //CompteDAO cDAO = new CompteDAO();
 
-
-    //Compte c = new Compte("C001",2000,1);
+   // Compte c = new Compte("C004",200000,3);
     //cDAO.ajouter(c);
 
-    //ArrayList<Compte> comptes = cDAO.getComptes();
-    //for (Compte c : comptes){
-      //  System.out.println(c);
+//    ArrayList<Compte> comptes = cDAO.getComptes();
+//    for (Compte c : comptes){
+//        System.out.println(c);
    // }
 
     //Compte recherche = cDAO.chercheParNumero("C001");
@@ -57,5 +56,5 @@ void main(){
 
    //cDAO.Modifier("C002",20000);
 
-    //cDAO.Supprimer("c002");
+    //cDAO.Supprimer("c003");
 }
